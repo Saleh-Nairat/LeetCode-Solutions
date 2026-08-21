@@ -2,6 +2,7 @@ class Solution {
 public:
     int longestIncreasingPath(vector<vector<int>>& matrix) {
         int m = matrix.size() , n = matrix[0].size() , answer = 0; 
+        // dp[i][j] represents the maximum length of an increasing path starting from cell (i, j).
         vector dp(m , vector<int>(n , -1));
         auto dfs = [&] (auto && dfs , int x , int y) -> int {
             if(~dp[x][y]){
